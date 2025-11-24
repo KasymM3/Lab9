@@ -21,6 +21,6 @@ public class Item {
     private int quantity;
 
     @ManyToOne
-    @JoinColumn(name = "manufacturer_id")
+    @JoinColumn(name = "manufactor_id")
     private Country manufacturer;
 }
