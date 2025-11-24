@@ -36,8 +36,23 @@
             <column name="quantity" type="int">
                 <constraints nullable="false" />
             </column>
+            
+            <column name="manufactor_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
 
 
         </createTable>
+    </changeSet>
+    
+    
+    <changeSet id="add-items-table-foreign-key-country-id" author="Kasym">
+        <addForeignKeyConstraint baseTableName="items" baseColumnNames="manufactor_id"
+                                 constraintName="fk_item_id" referencedTableName="countries"
+                                 referencedColumnNames="id"
+                                 onDelete="RESTRICT"
+                                 onUpdate="CASCADE"
+                                 validate="true"/>
+
     </changeSet>
 </databaseChangeLog>
