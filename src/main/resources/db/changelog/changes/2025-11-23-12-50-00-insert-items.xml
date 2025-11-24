@@ -10,21 +10,21 @@
             <column name="name" value="MacBook Pro"/>
             <column name="price" value="900000"/>
             <column name="quantity" value="5"/>
-            <column name="manufacturer_id" value="3"/>
+            <column name="manufactor_id" value="3"/>
         </insert>
 
         <insert tableName="items">
             <column name="name" value="Huawei Phone"/>
             <column name="price" value="150000"/>
             <column name="quantity" value="20"/>
-            <column name="manufacturer_id" value="2"/>
+            <column name="manufactor_id" value="2"/>
         </insert>
 
         <insert tableName="items">
             <column name="name" value="KazSat Modem"/>
             <column name="price" value="50000"/>
             <column name="quantity" value="50"/>
-            <column name="manufacturer_id" value="1"/>
+            <column name="manufactor_id" value="1"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
