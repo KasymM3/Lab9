@@ -43,9 +43,9 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public CountryDto updateCountry(CountryDto countryDto) {
         Country country = countryMapper.toEntity(countryDto);
-        Country saved = countryRepository.save(country);
-
-        return countryMapper.toDto(saved);
+        Country country1 = countryRepository.save(country);
+        CountryDto countryDto1 = countryMapper.toDto(country1);
+        return countryDto1;
     }
 
     @Override
