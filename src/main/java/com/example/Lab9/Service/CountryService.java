@@ -10,6 +10,6 @@ public interface CountryService {
     List<CountryDto> getCountries();
     CountryDto getCountry(Long id);
     CountryDto addCountry(CountryDto countryDto);
-    CountryDto updateCountry(CountryDto countryDto);
+    CountryDto updateCountry(Long id, CountryDto countryDto);
     boolean deleteCountry(Long id);
 }

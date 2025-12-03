@@ -6,6 +6,8 @@ import com.example.Lab9.Mapper.ItemMapper;
 import com.example.Lab9.Repository.ItemRepository;
 import com.example.Lab9.Service.ItemService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,11 +42,15 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public ItemDto updateItem(ItemDto itemDto) {
+    public ItemDto updateItem(Long id,ItemDto itemDto) {
+        ItemDto itemDto1 = getItem(id);
+        if(Objects.isNull(itemDto1)){
+            return null;
+        }
         Item item = itemMapper.toEntity(itemDto);
         Item item1= itemRepository.save(item);
-        ItemDto itemDto1 = itemMapper.toDto(item1);
-        return itemDto1;
+        ItemDto itemDto2 = itemMapper.toDto(item1);
+        return itemDto2;
     }
 
     @Override

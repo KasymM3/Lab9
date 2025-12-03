@@ -43,11 +43,11 @@ public class CountryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateCountry(@PathVariable Long id, @RequestBody CountryDto countryDto){
-        CountryDto countryDto1 = countryService.getCountry(id);
-        if(Objects.isNull(countryDto1)){
+
+        CountryDto updated=  countryService.updateCountry(id, countryDto);
+        if(Objects.isNull(updated)){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        CountryDto updated=  countryService.updateCountry(countryDto);
         return ResponseEntity.ok(updated);
 
     }

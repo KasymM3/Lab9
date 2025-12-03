@@ -7,6 +7,8 @@ import com.example.Lab9.Mapper.ItemMapper;
 import com.example.Lab9.Repository.CountryRepository;
 import com.example.Lab9.Service.CountryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,11 +43,15 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public CountryDto updateCountry(CountryDto countryDto) {
+    public CountryDto updateCountry(Long id, CountryDto countryDto) {
+        CountryDto countryDto1 = getCountry(id);
+        if(Objects.isNull(countryDto1)){
+            return null;
+        }
         Country country = countryMapper.toEntity(countryDto);
         Country country1 = countryRepository.save(country);
-        CountryDto countryDto1 = countryMapper.toDto(country1);
-        return countryDto1;
+        CountryDto countryDto2 = countryMapper.toDto(country1);
+        return countryDto2;
     }
 
     @Override

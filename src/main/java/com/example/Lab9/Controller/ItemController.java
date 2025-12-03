@@ -44,11 +44,11 @@ public class ItemController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateItem(@PathVariable Long id, @RequestBody ItemDto itemDto){
-        ItemDto itemDto1 = itemService.getItem(id);
-        if(Objects.isNull(itemDto1)){
+
+        ItemDto updated=  itemService.updateItem(id,itemDto);
+        if(Objects.isNull(updated)){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        ItemDto updated=  itemService.updateItem(itemDto);
         return ResponseEntity.ok(updated);
 
     }

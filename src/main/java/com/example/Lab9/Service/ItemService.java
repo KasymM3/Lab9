@@ -9,6 +9,6 @@ public interface ItemService {
     List<ItemDto> getItems();
     ItemDto getItem(Long id);
     ItemDto addItem(ItemDto itemDto);
-    ItemDto updateItem(ItemDto itemDto);
+    ItemDto updateItem(Long id,ItemDto itemDto);
     boolean deleteItem(Long id);
 }
