@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    
+    <include file="changes/2025-11-23-10-50-00-create-basic-tables-test.xml" relativeToChangelogFile="true"/>
+    <include file="changes/2025-11-23-11-50-00-insert-countries-test.xml" relativeToChangelogFile="true"/>
+    <include file="changes/2025-11-23-12-50-00-insert-items-test.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
