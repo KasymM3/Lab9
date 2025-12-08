@@ -50,7 +50,7 @@
         <addForeignKeyConstraint baseTableName="items" baseColumnNames="manufactor_id"
                                  constraintName="fk_item_id" referencedTableName="countries"
                                  referencedColumnNames="id"
-                                 onDelete="RESTRICT"
+                                 onDelete="SET NULL"
                                  onUpdate="CASCADE"
                                  validate="true"/>
 
